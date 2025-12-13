@@ -13,10 +13,8 @@ Automatically tracks player playtime using server-only logic and stores it safel
 - Automatic database table creation
 - Optimized in-memory caching
 - Read-only server exports
-- Supports 120+ concurrent players
+- Supports 128+ concurrent players
 - No client scripts
-- No AFK detection
-- No XP or progression systems
 
 ---
 

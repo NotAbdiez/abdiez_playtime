@@ -61,7 +61,6 @@ exports.abdiez_playtime:GetHours(source)
 exports.abdiez_playtime:HasMinutes(source, 10)
 exports.abdiez_playtime:HasHours(source, 24)
 
-Example Usage (QBCore)
 QBCore.Commands.Add("example", "Example command", {}, false, function(source)
     if not exports.abdiez_playtime:HasMinutes(source, 10) then
         TriggerClientEvent('QBCore:Notify', source, 'You need at least 10 minutes of playtime.', 'error')

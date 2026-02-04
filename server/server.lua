@@ -98,3 +98,39 @@ end)
 exports('HasHours', function(src, hours)
     return math.floor(FetchMinutes(src) / 60) >= hours
 end)
+
+RegisterCommand('playtime', function(source)
+    local src = source
+
+    local minutes = FetchMinutes(src)
+    if not minutes then return end
+
+    local hours = math.floor(minutes / 60)
+    local mins = minutes % 60
+
+    local text = ""
+
+    if hours > 0 then
+        text = hours .. " timme"
+        if hours > 1 then
+            text = text .. "r"
+        end
+    end
+
+    if mins > 0 then
+        if text ~= "" then
+            text = text .. " och "
+        end
+
+        text = text .. mins .. " minut"
+        if mins > 1 then
+            text = text .. "er"
+        end
+    end
+
+    if text == "" then
+        text = "0 minuter"
+    end
+
+    TriggerClientEvent('QBCore:Notify', src, "Du har spelat: " .. text, "success", 7500)
+end)
